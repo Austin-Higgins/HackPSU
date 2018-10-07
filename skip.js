@@ -73,12 +73,31 @@ class HomeScreen extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View style = {{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+
+      <ScrollView style={{width: 320}}>
+      <View style = {{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
       <Image
           style={{width: 150, height: 150, margin: 10, borderRadius:75 }}
           source={require('./assets/tay.jpg')}
         />
         <Text>Taylor Swift</Text>
-      
+        <Text>⭐⭐⭐⭐⭐</Text>
+        <View style={styles.profileSty}>
+          <Text>Title: Singer</Text>
+          <Text>Quote: "Look what you made me do!"</Text>
+          <Text>$100/ hour</Text>
+
+        </View>
+
+      </View>
+
+
+ 
+        </ScrollView>
+
+
+
+
       </View>
 
        
@@ -188,6 +207,15 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  profileSty:{
+
+    backgroundColor: '#99e1d9',
+    borderRadius: 10,
+    padding: 20,
+    marginTop: 30,
+
+
   }
 })
 

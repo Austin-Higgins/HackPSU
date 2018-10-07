@@ -3,11 +3,16 @@ import React, { Component } from 'react';
 import { AppRegistry, FlatList, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 
 
+import LoginWithPhone from './LoginWithPhone';
+
 class Card extends Component{
+  pressedButton = () => {
+    this.props.navigate("LoginWithPhone", {});
+  }
   render(){
     return(
       <View>
-      <TouchableOpacity onPress={this.props.file} style={styles.border}>                
+      <TouchableOpacity onPress={this.pressedButton} style={styles.border}>                
         <Text style={styles.previewText}>{this.props.type}</Text>
       </TouchableOpacity>
       </View>
@@ -21,14 +26,14 @@ export default class EducationalCards extends Component{
     return(
       <View style={styles.container}>
         <ScrollView>
-        <Card type="Babysitting"/>
-        <Card type="Lawnmowing"/>
-        <Card type="Petsitting"/>
-        <Card type="Car Washing"/>
-        <Card type="General Cleaning"/>
-        <Card type="Laundry"/>
-        <Card type="Floor Cleaning"/>
-        <Card type="Moving"/>
+        <Card type="Babysitting" navigate={this.props.navigation.navigate}/>
+        <Card type="Lawnmowing" navigate={this.props.navigation.navigate}/>
+        <Card type="Petsitting" navigate={this.props.navigation.navigate}/>
+        <Card type="Car Washing" navigate={this.props.navigation.navigate}/>
+        <Card type="General Cleaning" navigate={this.props.navigation.navigate}/>
+        <Card type="Laundry" navigate={this.props.navigation.navigate}/>
+        <Card type="Floor Cleaning" navigate={this.props.navigation.navigate}/>
+        <Card type="Moving" navigate={this.props.navigation.navigate}/>
         </ScrollView>
       </View>
 
