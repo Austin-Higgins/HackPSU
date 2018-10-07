@@ -2,21 +2,31 @@ import React, { Component } from 'react';
 import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image, Button } from 'react-native';
 import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
 
+{/*IMPORT OTHER CLASSES FROM DIFFERENT FILES */}
+import LoginWithFacebook from './LoginWithFacebook';
+import LoginWithPhone from './LoginWithPhone';
+import signUp from './signup';
+import skip from './skip';
 
-
+{/*CLASS FOR MAKING BUTTONS*/}
 class ButtonMintGreen extends Component {
+  pressedButton = () => {
+    this.props.navigate(this.props.page, {});
+  }
   render() {
     return (
       <View>
-        <TouchableOpacity style={styles.ButtonMintGreen}>
+        <TouchableOpacity onPress={this.pressedButton}
+          style={styles.ButtonMintGreen}>
           <Text style={styles.whiteButton}>{this.props.text}</Text>
-        </TouchableOpacity>
-  
+        </TouchableOpacity> 
       </View>
     );
   }
 }
 
+
+{/* MAIN LOG IN SCREEN */}
 class App extends Component {
 
   render() {
@@ -30,79 +40,13 @@ class App extends Component {
           source={require('./assets/chorestorepng.png')}
         />
 
+        {/*CALLING BUTTON MINT GREEN FUNCTION ABOVE */}
+        <ButtonMintGreen text='Log In with Facebook' page='LoginWithFacebook' navigate={this.props.navigation.navigate} />
+        <ButtonMintGreen text='Log In with Phone Number' page='loginwithphone' navigate={this.props.navigation.navigate} />
+        <ButtonMintGreen text='Sign Up' page='SignUp' navigate={this.props.navigation.navigate} />
+        <ButtonMintGreen text='Skip' page='Skip' navigate={this.props.navigation.navigate} />
 
 
-
-        <TouchableOpacity style={styles.ButtonMintGreen}>
-        <Button 
-        title="Log In with Facebook"
-        color="#636363"
-        onPress={() => {  
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Page2' })
-              ],
-            }))
-          }}
-           />
-        </TouchableOpacity>
-
-
-        <TouchableOpacity style={styles.ButtonMintGreen}>
-        <Button 
-        title="Log In with Phone Number"
-        color="#636363"
-        onPress={() => {  
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Page2' })
-              ],
-            }))
-          }}
-           />
-        </TouchableOpacity>
-
-
-        <TouchableOpacity style={styles.ButtonMintGreen}>
-        <Button 
-        title="Sign Up"
-        color="#636363"
-        onPress={() => {  
-            this.props.navigation.dispatch(StackActions.reset({
-              index: 0,
-              actions: [
-                NavigationActions.navigate({ routeName: 'Page2' })
-              ],
-            }))
-          }}
-           />
-        </TouchableOpacity>
-
-        {/* <ButtonMintGreen text='Log In with Phone Number' />
-        <ButtonMintGreen text='Sign Up' /> */ }
-
-      </View>
-
-    );
-  }
-}
-
-class xpage2 extends Component {
-
-  render() {
-    return (
-      <View style={styles.container}>
-
-
-      <StatusBar hidden />
-        <Image
-          style={{width: 200, height: 200, margin: 10 }}
-          source={require('./assets/chorestorepng.png')}
-        />
-
-        <ButtonMintGreen text='Sign Up' />
 
       </View>
 
@@ -111,16 +55,15 @@ class xpage2 extends Component {
 }
 
 
-
-
-
+{/* NAVIGATION DICTIONARY */}
 export default createStackNavigator({
   Home: {
     screen: App,
   },
-  Page2: {
-    screen: xpage2,
-  },
+  LoginWithFacebook: { screen: LoginWithFacebook},
+  loginwithphone: { screen: LoginWithPhone},
+  SignUp: {screen: signUp},
+  Skip: {screen: skip},
   }, {
     initialRouteName: 'Home',
 });
@@ -128,7 +71,7 @@ export default createStackNavigator({
 
 
 
-
+{/* STYlE SHEETS */}
 
 const styles = StyleSheet.create({
   container: {
@@ -140,12 +83,12 @@ const styles = StyleSheet.create({
   },
   ButtonMintGreen: {
     marginTop: 20,
-    textAlign: 'center',
+
     width: 300,
     paddingTop: 20,
     paddingBottom: 20,
     backgroundColor: '#ffffff',
-    color: '#000000',
+
 
     borderRadius:50,
     borderWidth: 1,

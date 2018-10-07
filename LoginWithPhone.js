@@ -15,7 +15,7 @@ class ButtonMintGreen extends Component {
 }
 
 
-export default class LoginWithFacebook extends Component {
+export default class LoginWithPhone extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -28,7 +28,7 @@ export default class LoginWithFacebook extends Component {
         />
 
 
-        <ButtonMintGreen text='FACEBOOK' />
+        <ButtonMintGreen text='PHONE' />
 
       </View>
 
