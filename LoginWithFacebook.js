@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image } from 'react-native';
 
 class ButtonMintGreen extends Component {
+  pressedButton = () => {
+    Expo.Facebook.logInWithReadPermissionsAsync(276112029676141, "ios");
+  }
   render() {
     return (
       <View>
-        <TouchableOpacity style={styles.ButtonMintGreen}>
+        <TouchableOpacity onPress={this.pressedButton}
+          style={styles.ButtonMintGreen}>
           <Text style={styles.whiteButton}>{this.props.text}</Text>
         </TouchableOpacity>
-  
       </View>
     );
   }
@@ -26,7 +29,7 @@ export default class LoginWithFacebook extends Component {
         />
 
 
-        <ButtonMintGreen text='FACEBOOK' />
+        <ButtonMintGreen text='Log In with Facebook' navigate={this.props.navigation.navigate} />
 
       </View>
 
