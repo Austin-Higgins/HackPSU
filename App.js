@@ -8,8 +8,11 @@ import LoginWithPhone from './LoginWithPhone';
 import signUp from './signup';
 import skip from './skip';
 
+import EducationalCards from "./EducationalCards";
+import HomeCard from "./HomeCard";
+
 {/*CLASS FOR MAKING BUTTONS*/}
-class ButtonMintGreen extends Component {
+export class ButtonMintGreen extends Component {
   pressedButton = () => {
     this.props.navigate(this.props.page, {});
   }
@@ -64,6 +67,8 @@ export default createStackNavigator({
   loginwithphone: { screen: LoginWithPhone},
   SignUp: {screen: signUp},
   Skip: {screen: skip},
+  EducationalCards:{screen: EducationalCards},
+  HomeCard:{screen: HomeCard},
   }, {
     initialRouteName: 'Home',
 });
