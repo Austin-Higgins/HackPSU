@@ -19,9 +19,7 @@ export default class LoginWithPhone extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-
-      <StatusBar hidden />
+      <StatusBar backgroundColor="black" />
         <Image
           style={{width: 200, height: 200, margin: 10 }}
           source={require('./assets/chorestorepng.png')}

@@ -19,13 +19,7 @@ export default class skip extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-
-      <StatusBar hidden />
-        <Image
-          style={{width: 200, height: 200, margin: 10 }}
-          source={require('./assets/chorestorepng.png')}
-        />
+      <StatusBar backgroundColor="black" />
 
 
         <ButtonMintGreen text='SKIP' />

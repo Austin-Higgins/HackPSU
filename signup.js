@@ -20,8 +20,6 @@ export default class signUp extends Component {
     return (
       <View style={styles.container}>
 
-
-      <StatusBar hidden />
         <Image
           style={{width: 200, height: 200, margin: 10 }}
           source={require('./assets/chorestorepng.png')}

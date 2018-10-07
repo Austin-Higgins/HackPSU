@@ -32,9 +32,9 @@ class App extends Component {
   render() {
     return (
       <View style={styles.container}>
+      <StatusBar backgroundColor="black" />
 
-
-      <StatusBar hidden />
+      
         <Image
           style={{width: 200, height: 200, margin: 10 }}
           source={require('./assets/chorestorepng.png')}
