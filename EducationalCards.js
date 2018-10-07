@@ -27,13 +27,14 @@ export default class EducationalCards extends Component{
       <View style={styles.container}>
         <ScrollView>
         <Card type="Babysitting" navigate={this.props.navigation.navigate}/>
-        <Card type="Lawnmowing" navigate={this.props.navigation.navigate}/>
-        <Card type="Petsitting" navigate={this.props.navigation.navigate}/>
         <Card type="Car Washing" navigate={this.props.navigation.navigate}/>
+        <Card type="Floor Cleaning" navigate={this.props.navigation.navigate}/>
         <Card type="General Cleaning" navigate={this.props.navigation.navigate}/>
         <Card type="Laundry" navigate={this.props.navigation.navigate}/>
-        <Card type="Floor Cleaning" navigate={this.props.navigation.navigate}/>
+        <Card type="Lawnmowing" navigate={this.props.navigation.navigate}/>
         <Card type="Moving" navigate={this.props.navigation.navigate}/>
+        <Card type="Petsitting" navigate={this.props.navigation.navigate}/>
+
         </ScrollView>
       </View>
 

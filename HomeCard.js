@@ -25,9 +25,9 @@ export default class HomeCard extends Component{
     return(
       <View style={styles.container}>
         <ScrollView>
-        <Card type="Tutoring" navigate={this.props.navigation.navigate} />
-        <Card type="Note Taking" navigate={this.props.navigation.navigate} />
         <Card type="Exam Preparation" navigate={this.props.navigation.navigate} />
+        <Card type="Note Taking" navigate={this.props.navigation.navigate} />
+        <Card type="Tutoring" navigate={this.props.navigation.navigate} />
         </ScrollView>
       </View>
     );
