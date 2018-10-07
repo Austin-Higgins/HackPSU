@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image } from 'react-native';
+import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image, Button } from 'react-native';
+import { createStackNavigator, StackActions, NavigationActions } from 'react-navigation'; // Version can be specified in package.json
 
-
-import PropTypes from 'prop-types';
-import { NavigatorIOS, TouchableHighlight } from 'react-native';
 
 
 class ButtonMintGreen extends Component {
@@ -19,13 +17,7 @@ class ButtonMintGreen extends Component {
   }
 }
 
-export default class App extends Component {
-
-  onButtonPress(){
-    this.props.navigator.push({
-      id:'LoginWithFacebook'
-    });
-  }
+class App extends Component {
 
   render() {
     return (
@@ -39,8 +31,77 @@ export default class App extends Component {
         />
 
 
-        <ButtonMintGreen onPress={this.onButtonPress.bind(this)} text='Log In with Facebook' />
-        <ButtonMintGreen text='Log In with Phone Number' />
+
+
+        <TouchableOpacity style={styles.ButtonMintGreen}>
+        <Button 
+        title="Log In with Facebook"
+        color="#636363"
+        onPress={() => {  
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Page2' })
+              ],
+            }))
+          }}
+           />
+        </TouchableOpacity>
+
+
+        <TouchableOpacity style={styles.ButtonMintGreen}>
+        <Button 
+        title="Log In with Phone Number"
+        color="#636363"
+        onPress={() => {  
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Page2' })
+              ],
+            }))
+          }}
+           />
+        </TouchableOpacity>
+
+
+        <TouchableOpacity style={styles.ButtonMintGreen}>
+        <Button 
+        title="Sign Up"
+        color="#636363"
+        onPress={() => {  
+            this.props.navigation.dispatch(StackActions.reset({
+              index: 0,
+              actions: [
+                NavigationActions.navigate({ routeName: 'Page2' })
+              ],
+            }))
+          }}
+           />
+        </TouchableOpacity>
+
+        {/* <ButtonMintGreen text='Log In with Phone Number' />
+        <ButtonMintGreen text='Sign Up' /> */ }
+
+      </View>
+
+    );
+  }
+}
+
+class xpage2 extends Component {
+
+  render() {
+    return (
+      <View style={styles.container}>
+
+
+      <StatusBar hidden />
+        <Image
+          style={{width: 200, height: 200, margin: 10 }}
+          source={require('./assets/chorestorepng.png')}
+        />
+
         <ButtonMintGreen text='Sign Up' />
 
       </View>
@@ -48,6 +109,24 @@ export default class App extends Component {
     );
   }
 }
+
+
+
+
+
+export default createStackNavigator({
+  Home: {
+    screen: App,
+  },
+  Page2: {
+    screen: xpage2,
+  },
+  }, {
+    initialRouteName: 'Home',
+});
+
+
+
 
 
 
