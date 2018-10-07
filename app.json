@@ -21,13 +21,8 @@
       "**/*"
     ],
     "ios": {
-      "bundleIdentifier": "host.exp.Exponent",
+      "bundleIdentifier": "com.hackpsu.chorestore",
       "supportsTablet": true
-    },
-    "facebook": {
-            "scheme": "fb276112029676141",
-            "appId": "276112029676141",
-            "displayName": "Chore-Store"
     }
   }
 }
