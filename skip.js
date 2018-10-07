@@ -1,66 +1,50 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image } from 'react-native';
+import { Text, View } from 'react-native';
+import { createBottomTabNavigator } from 'react-navigation';
 
-class ButtonMintGreen extends Component {
+class FeatScreen extends Component {
   render() {
     return (
-      <View>
-        <TouchableOpacity style={styles.ButtonMintGreen}>
-          <Text style={styles.whiteButton}>{this.props.text}</Text>
-        </TouchableOpacity>
-  
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Feat!</Text>
       </View>
     );
   }
 }
 
-
-export default class skip extends Component {
+class CategoryScreen extends Component {
   render() {
     return (
-      <View style={styles.container}>
-      <StatusBar backgroundColor="black" />
-
-
-        <ButtonMintGreen text='SKIP' />
-
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Categories!</Text>
       </View>
-
     );
   }
 }
 
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#99e1d9',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
-  },
-  ButtonMintGreen: {
-    marginTop: 20,
-
-    width: 300,
-    paddingTop: 20,
-    paddingBottom: 20,
-    backgroundColor: '#ffffff',
-
-
-    borderRadius:50,
-    borderWidth: 1,
-    borderColor: '#99e1d9',
-    shadowOffset:{  width: 10,  height: 10,  },
-    shadowColor: 'black',
-    shadowOpacity: 0.3,
-
-  },
-  whiteButton: {
-    color: '#636363',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
+class HomeScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Home!</Text>
+      </View>
+    );
   }
+}
+
+class SettingsScreen extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text>Settings!</Text>
+      </View>
+    );
+  }
+}
+
+export default createBottomTabNavigator({
+  Featured: FeatScreen,
+  Categories: CategoryScreen,
+  Home: HomeScreen,
+  Settings: SettingsScreen,
 });
