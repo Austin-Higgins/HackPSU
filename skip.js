@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { AppRegistry, FlatList, StyleSheet, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 
@@ -161,11 +162,50 @@ class SettingsScreen extends Component {
 }
 
 export default createBottomTabNavigator({
-  Featured: FeatScreen,
+  Social: FeatScreen,
   Categories: CategoryScreen,
   Profile: HomeScreen,
   Settings: SettingsScreen,
-});
+  },
+  {
+    navigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let iconName;
+        if (routeName === 'FeatScreen') {
+          iconName = `ion-navicon-round${focused ? '' : '-outline'}`;
+        } 
+        
+        else if (routeName === 'CategoryScreen') {
+          iconName = `ion-social-rss${focused ? '' : '-outline'}`;
+        }
+
+        else if (routeName === 'HomeScreen') {
+          iconName = `ion-ios-home${focused ? '' : '-outline'}`;
+        } 
+        
+        else if (routeName === 'SettingsScreen') {
+          iconName = `ios-options${focused ? '' : '-outline'}`;
+        }
+
+        // You can return any component that you like here! We usually use an
+        // icon component from react-native-vector-icons
+        return <Ionicons name={iconName} size={horizontal ? 20 : 25} color={tintColor} />;
+      },
+    }),
+    tabBarOptions: {
+      activeTintColor: 'tomato',
+      inactiveTintColor: 'gray',
+    },
+  }
+  );
+
+// export default createBottomTabNavigator({
+//   Featured: FeatScreen,
+//   Categories: CategoryScreen,
+//   Profile: HomeScreen,
+//   Settings: SettingsScreen,
+// });
 
 
 
