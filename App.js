@@ -4,7 +4,7 @@ import { createStackNavigator, StackActions, NavigationActions } from 'react-nav
 
 {/*IMPORT OTHER CLASSES FROM DIFFERENT FILES */}
 import LoginWithFacebook from './LoginWithFacebook';
-import LoginWithPhone from './LoginWithPhone';
+import LoginWithPhone from './LoginWithPhone'; 
 import signUp from './signup';
 import skip from './skip';
 
@@ -64,7 +64,7 @@ export default createStackNavigator({
     screen: App,
   },
   LoginWithFacebook: { screen: LoginWithFacebook},
-  loginwithphone: { screen: LoginWithPhone},
+  LoginWithPhone: { screen: LoginWithPhone},
   SignUp: {screen: signUp},
   Skip: {screen: skip},
   EducationalCards:{screen: EducationalCards},

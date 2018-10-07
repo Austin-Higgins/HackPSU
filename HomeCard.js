@@ -2,12 +2,16 @@
 import React, { Component } from 'react';
 import { AppRegistry, FlatList, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 
+import LoginWithPhone from './LoginWithPhone';
 
 class Card extends Component{
+  pressedButton = () => {
+    this.props.navigate("LoginWithPhone", {});
+  }
   render(){
     return(
       <View>
-      <TouchableOpacity onPress={this.props.file} style={styles.border}>                
+      <TouchableOpacity onPress={this.pressedButton} style={styles.border}>                
         <Text style={styles.previewText}>{this.props.type}</Text>
       </TouchableOpacity>
       </View>
@@ -21,9 +25,9 @@ export default class HomeCard extends Component{
     return(
       <View style={styles.container}>
         <ScrollView>
-        <Card type="Tutoring"/>
-        <Card type="Note Taking"/>
-        <Card type="Exam Preparation"/>
+        <Card type="Tutoring" navigate={this.props.navigation.navigate} />
+        <Card type="Note Taking" navigate={this.props.navigation.navigate} />
+        <Card type="Exam Preparation" navigate={this.props.navigation.navigate} />
         </ScrollView>
       </View>
     );

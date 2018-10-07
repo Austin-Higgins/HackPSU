@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, StatusBar, Text, View, Image } from 'react-native';
-import { AppRegistry } from 'react-native';
+import { ScrollView } from 'react-native';
 
 
 
@@ -9,37 +9,30 @@ export default class LoginWithPhone extends Component {
     return (
       <View style={styles.base}>
       <StatusBar backgroundColor="black" />
-        
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='⭐⭐☆☆☆' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
-
+      <ScrollView>
+         <PersonSmall title='FrontEnd Developer'  quote='Quote: Living a life' cost='$50'  username='Ali Malik' rating='⭐⭐☆☆☆' />
+         <PersonSmall title='Designer'  quote='Quote: Something' cost='$20'  username='Jake Davis' rating='⭐☆☆☆☆' />
+         <PersonSmall title='Backend Developer'  quote='Quote: Something' cost='$70'  username='Austin Higgins' rating='⭐⭐⭐☆☆' />
+         <PersonSmall title='Backend Developer'  quote='Quote: Dinosaur' cost='$50'  username='Brandon Bartosek' rating='⭐⭐⭐⭐⭐' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='Quote: I love it' cost='$50'  username='John Doe' rating='⭐⭐⭐⭐☆' />
+         </ScrollView>
       </View>
 
     );
   }
 }
 
-class PersonSmall extends Component {
+export class PersonSmall extends Component {
   render()
   {
       return(
-
-      //Create the outside container.
-  
-
-
       <View style={styles.container}>
         <View style={{flexDirection: 'column',justifyContent: 'center', alignItems: 'center',  marginRight: 50,}}>
              <Image
                style= {{width: 80, height: 80,}}
                source={require('./assets/blankPerson.jpg')}
                />
-               <Text>{this.props.username}</Text>
+               <Text style={{width:60}} >{this.props.username}</Text>
         </View>
 
         <View style={{flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
@@ -47,8 +40,8 @@ class PersonSmall extends Component {
 
             <Text style={{padding: 5}}>{this.props.quote}</Text>
             <View style={{flexDirection: 'row'}}>
-              <Text style={{position: "absolute", right: 65}}>{this.props.cost}</Text>
-              <Text style={{position: "absolute", left: 35}}>{this.props.rating}</Text>
+              <Text style={{padding:20}}>{this.props.cost}</Text>
+              <Text style={{padding:20}}>{this.props.rating}</Text>
             </View>
         </View>
       

@@ -6,12 +6,34 @@ import { createBottomTabNavigator } from 'react-navigation';
 import { AppRegistry, FlatList, StyleSheet, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
 
 
+class Social extends Component {
+  render() {
+    return (
+        <View style={styles.socialMediaBox}>
+          <Text style={{fontSize: 16, textAlign:"center", }}>{this.props.p1} {this.props.help} {this.props.p2}!</Text>
+        </View>
+    );
+  }
+}
 
 class FeatScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Feat!</Text>
+      <ScrollView>
+        <Text style={{textAlign:"center", fontSize: 23, fontWeight: "bold", marginTop: 40, marginBottom: 20, }}>Chore-laboration</Text>
+        <Social p1="Jim" help="mowed the lawn for" p2="Carly"/>
+        <Social p1="Kanye" help="cooked chicken for" p2="Kim"/>
+        <Social p1="Kristian" help="made wings for" p2="Wes"/>
+        <Social p1="Ali" help="took notes for" p2="Brandon"/>
+        <Social p1="Rose" help="got flowers for" p2="Jack"/>
+        <Social p1="Jack" help="petsat for" p2="Cindy"/>
+        <Social p1="Dana" help="did laundry for" p2="Kristian"/>
+        <Social p1="Jim" help="took out the trash for" p2="Sam"/>
+        <Social p1="Sydney" help="played music for" p2="Rebecca"/>
+
+        <Text  style={{textAlign:"center", fontSize: 12, fontWeight: "100", marginTop: 20, marginBottom: 20, }}>You're all caught up! 🎆🎇</Text>
+      </ScrollView>
       </View>
     );
   }
@@ -73,12 +95,31 @@ class HomeScreen extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <View style = {{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+
+      <ScrollView style={{width: 320}}>
+      <View style = {{flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
       <Image
           style={{width: 150, height: 150, margin: 10, borderRadius:75 }}
           source={require('./assets/tay.jpg')}
         />
         <Text>Taylor Swift</Text>
-      
+        <Text>⭐⭐⭐⭐⭐</Text>
+        <View style={styles.profileSty}>
+          <Text>Title: Singer</Text>
+          <Text>Quote: "Look what you made me do!"</Text>
+          <Text>$100/ hour</Text>
+
+        </View>
+
+      </View>
+
+
+ 
+        </ScrollView>
+
+
+
+
       </View>
 
        
@@ -161,7 +202,7 @@ const styles = StyleSheet.create({
     height:330,
 
   }, TOTpreviewText:{
-    marginTop: 250,
+    marginTop: 230,
     marginLeft: 20,
     fontSize: 40,
     color: 'white',
@@ -188,6 +229,28 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+  },
+  profileSty:{
+
+    backgroundColor: '#99e1d9',
+    borderRadius: 10,
+    padding: 20,
+    marginTop: 30,
+  },
+  socialMediaBox: {
+    padding: 15,
+    margin: 15,
+    borderRadius: 15,
+    width: 300,
+    height: 50,
+    backgroundColor: "#99e1d9",
+    shadowColor: "#000000",
+    shadowOpacity: 0.8,
+    shadowRadius: 5,
+    shadowOffset: {
+      height: 3,
+      width: 0
+    }
   }
 })
 
