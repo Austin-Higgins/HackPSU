@@ -1,32 +1,22 @@
 import React, { Component } from 'react';
-import { StyleSheet, StatusBar, TouchableOpacity, Text, View, Image } from 'react-native';
+import { StyleSheet, StatusBar, Text, View, Image } from 'react-native';
+import { AppRegistry } from 'react-native';
 
-class ButtonMintGreen extends Component {
-  render() {
-    return (
-      <View>
-        <TouchableOpacity style={styles.ButtonMintGreen}>
-          <Text style={styles.whiteButton}>{this.props.text}</Text>
-        </TouchableOpacity>
-  
-      </View>
-    );
-  }
-}
 
 
 export default class LoginWithPhone extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.base}>
       <StatusBar backgroundColor="black" />
-        <Image
-          style={{width: 200, height: 200, margin: 10 }}
-          source={require('./assets/chorestorepng.png')}
-        />
-
-
-        <ButtonMintGreen text='PHONE' />
+        
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='⭐⭐☆☆☆' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
+         <PersonSmall title='Johns Lawn Mowing'  quote='I love it' cost='$50'  username='John Doe' rating='5/5' />
 
       </View>
 
@@ -34,37 +24,66 @@ export default class LoginWithPhone extends Component {
   }
 }
 
+class PersonSmall extends Component {
+  render()
+  {
+      return(
+
+      //Create the outside container.
+  
+
+
+      <View style={styles.container}>
+        <View style={{flexDirection: 'column',justifyContent: 'center', alignItems: 'center',  marginRight: 50,}}>
+             <Image
+               style= {{width: 80, height: 80,}}
+               source={require('./assets/blankPerson.jpg')}
+               />
+               <Text>{this.props.username}</Text>
+        </View>
+
+        <View style={{flexDirection: 'column',justifyContent: 'center', alignItems: 'center'}}>
+           <Text style={{padding: 5}}>{this.props.title}</Text>
+
+            <Text style={{padding: 5}}>{this.props.quote}</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Text style={{position: "absolute", right: 65}}>{this.props.cost}</Text>
+              <Text style={{position: "absolute", left: 35}}>{this.props.rating}</Text>
+            </View>
+        </View>
+      
+
+      </View>
+
+      );
+
+  }
+  
+}
+
 
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#99e1d9',
-    alignItems: 'center',
-    justifyContent: 'center',
+  base:{
+    flex:1,
+    backgroundColor: '#636363',
+    padding: 20,
     
   },
-  ButtonMintGreen: {
-    marginTop: 20,
+  container: {
+    
+    flexDirection: 'row',
 
-    width: 300,
+    backgroundColor: '#FFF',
+    borderRadius:75,
+    borderWidth: 2,
+    borderColor: '#99e1d9',
     paddingTop: 20,
     paddingBottom: 20,
-    backgroundColor: '#ffffff',
+    paddingLeft: 30,
+    marginTop: 20
+    
+    
+    }
 
-
-    borderRadius:50,
-    borderWidth: 1,
-    borderColor: '#99e1d9',
-    shadowOffset:{  width: 10,  height: 10,  },
-    shadowColor: 'black',
-    shadowOpacity: 0.3,
-
-  },
-  whiteButton: {
-    color: '#636363',
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  }
 });
