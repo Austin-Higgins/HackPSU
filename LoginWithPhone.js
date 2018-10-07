@@ -48,12 +48,12 @@ const styles = StyleSheet.create({
   },
   ButtonMintGreen: {
     marginTop: 20,
-    textAlign: 'center',
+
     width: 300,
     paddingTop: 20,
     paddingBottom: 20,
     backgroundColor: '#ffffff',
-    color: '#000000',
+
 
     borderRadius:50,
     borderWidth: 1,
