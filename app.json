@@ -21,6 +21,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.hackpsu.chorestore",
       "supportsTablet": true
     }
   }
